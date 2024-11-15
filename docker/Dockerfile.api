@@ -1,0 +1,20 @@
+# Base image olarak Node 20-alpine kullan
+FROM node:20-alpine
+
+# tsx'i global olarak yükle
+RUN npm install tsx -g
+
+# Çalışma dizinini ayarla
+WORKDIR /api
+
+# Uygulama dosyalarını kopyala
+COPY src/api ./
+
+# Bağımlılıkları yükle
+RUN npm install
+
+# Uygulamanın çalışacağı portu belirt
+EXPOSE 3001
+
+# Uygulamayı başlat
+CMD ["npm", "run", "start:dev"]
