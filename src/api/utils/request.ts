@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import { Request, RequestFilterType } from "@/types/request";
 import { isAdminUser } from "./auth";
 import { filterHiddenFields } from "./model";
@@ -15,6 +16,17 @@ export const prepareRequestFilters = (filters?: RequestFilterType, req?: Request
 
         if (filters?.where) {
             preparedFilters.where = !isAdminUser(req) ? filters.where : filterHiddenFields(filters?.where, req, model);
+
+            // "price": [1, 50] gibi özel durumlar için
+            Object.keys(filters.where).forEach((key) => {
+                const value = filters.where[key];
+                if (Array.isArray(value) && value.length === 2) {
+                    preparedFilters.where[key] = { [Op.between]: value };
+                } else {
+                    preparedFilters.where[key] = value;
+                }
+            });
+
             if (filters.where?.include) {
                 preparedFilters.include = preparedFilters.include || {};
                 preparedFilters.include = { where: { ...(!isAdminUser(req) ? filterHiddenFields(filters?.where?.include, req, relatedModel) : filters.where.include) } };
