@@ -1,20 +1,7 @@
 import dotenv from "dotenv";
+import { AppConfigType, DatabaseConfigType } from "@/utils/app";
 
 dotenv.config();    // .env dosyasındaki değerlere process.env ile ulaşmayı sağlar.
-
-type AppConfigType = {
-    env: string;
-    name: string;
-    url: string;
-    port: string;
-}
-type DatabaseConfigType = {
-    host: string;
-    database: string;
-    username: string;
-    password: string;
-    dialect: string;
-}
 
 export const appConfig: AppConfigType = {
     env: process.env.NODE_ENV as string,

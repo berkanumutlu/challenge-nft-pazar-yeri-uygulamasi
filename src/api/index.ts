@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { appConfig, databaseConfig } from "@/config";
 import responseHandler from "@/middlewares/responseHandler";
+import errorHandler from "@/middlewares/errorHandler";
 
 // Express sunucuyu başlat
 const server = express();
@@ -32,3 +33,6 @@ const main = () => {
     }
 };
 main();
+
+// ErrorHandler
+server.use(errorHandler as express.ErrorRequestHandler);
