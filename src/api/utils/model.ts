@@ -4,7 +4,7 @@ import { isAdminUser } from "./auth";
 import { slugifyText } from "./text";
 
 export const filterRecordFields = (record: any, type: string, req?: Request, model?: any, includedFields: string[] = [], excludedFields: string[] = []) => {
-    if (!record) return [];
+    if (!record) return null;
 
     if (!isAdminUser(req)) {
         let attributeList = [...(model && model[type] || []), ...includedFields];
@@ -43,5 +43,5 @@ export const slugifyModelField = (record: Model, field: string, fallbackField: s
     return record;
 };
 export const checkRecordSlug = (record: Model) => {
-    return slugifyModelField(record, 'slug', 'name');
+    return slugifyModelField(record, 'slug', 'title');
 };

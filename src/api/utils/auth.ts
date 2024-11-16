@@ -1,6 +1,6 @@
 import { JwtPayload, verify, sign } from 'jsonwebtoken';
 import { Request } from '@/types/request';
-import { UserRoleType, UserType } from '@/types/user';
+import { UserRoleType } from '@/types/user';
 import { JWTUserType } from '@/types/auth';
 import { jwtConfig } from '@/config';
 import { userRoles } from '@/endpoints/auth/enums/userRoles';

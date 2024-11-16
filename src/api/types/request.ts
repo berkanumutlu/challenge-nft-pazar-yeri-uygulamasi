@@ -1,5 +1,5 @@
 import { Response as ExpressResponse, Request as ExpressRequest, NextFunction } from "express";
-import { UserType } from "./user";
+import { UserModelType } from "./models";
 
 export type Request = ExpressRequest & AuthenticatedRequest;
 export type Response = ExpressResponse & {
@@ -10,13 +10,13 @@ export type Response = ExpressResponse & {
 export type Next = NextFunction;
 export type AuthenticatedRequest = ExpressRequest & {
     token: string;
-    user?: UserType;
+    user: UserModelType;
 };
 export type RequestFilterType = {
     select?: string[] | string,
     selectInclude?: string[] | string,
     where?: Record<string, any>,
     limit?: number,
-    offset?: number,
+    skip?: number,
     order?: Record<string, 'ASC' | 'DESC'>
 };

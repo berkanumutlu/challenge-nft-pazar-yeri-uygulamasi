@@ -1,11 +1,11 @@
 import { FindOptions } from "sequelize";
-import { UserType } from "@/types/user";
+import { UserModelType } from "@/types/models";
 import { User } from "../models/User";
 
-export const list = (filters?: FindOptions<UserType>) => {
+export const list = (filters?: FindOptions<UserModelType>) => {
     return User.findAll(filters);
 };
-export const count = (filters?: FindOptions<UserType>) => {
+export const count = (filters?: FindOptions<UserModelType>) => {
     if (Object.hasOwn(filters, 'attributes')) {
         delete filters.attributes;
     }
@@ -14,6 +14,6 @@ export const count = (filters?: FindOptions<UserType>) => {
 export const get = (filters?: FindOptions) => {
     return User.findOne(filters);
 };
-export const create = (data: UserType) => {
+export const create = (data: UserModelType) => {
     return User.create(data);
 };

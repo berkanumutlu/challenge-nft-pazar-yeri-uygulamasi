@@ -12,8 +12,8 @@ export const register = async (req: Request, res: Response, next: Next) => {
 
         requestData.role = userRoles.USER;
         const newRecord = await UserService.create(filterGuardedFields(requestData, req, User));
-
         const responseData = filterHiddenFields(newRecord, req, User);
+
         return res.success(responseData, 'You have successfully registered.', 201);
     } catch (err) {
         next(err);
@@ -30,7 +30,9 @@ export const login = async (req: Request, res: Response, next: Next) => {
         if (!isPaswordCorrect) return res.warning('Username or password is incorrect.', 401);
 
         const userToken = createToken({ id: record.getDataValue('id'), role: record.getDataValue('role') });
-        return res.success({ token: userToken }, 'You have successfully logged in.', 200);
+        const responseData = { token: userToken };
+
+        return res.success(responseData, 'You have successfully logged in.', 200);
     } catch (err) {
         next(err);
     }
@@ -55,6 +57,7 @@ export const me = async (req: AuthenticatedRequest, res: Response, next: Next) =
         if (user.getDataValue('status') !== true) return res.warning('Access denied.', 403);
 
         const responseData = filterHiddenFields(user, req, User, null, ['id']);
+
         return res.success(responseData);
     } catch (err) {
         next(err);

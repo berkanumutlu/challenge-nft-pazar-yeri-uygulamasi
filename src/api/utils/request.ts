@@ -9,8 +9,8 @@ export const prepareRequestFilters = (filters?: RequestFilterType, req?: Request
             preparedFilters.limit = Number(filters.limit);
         }
 
-        if (filters?.offset && Number.isInteger(filters?.offset)) {
-            preparedFilters.offset = Number(filters.offset);
+        if (filters?.skip && Number.isInteger(filters?.skip)) {
+            preparedFilters.offset = Number(filters.skip);
         }
 
         if (filters?.where) {

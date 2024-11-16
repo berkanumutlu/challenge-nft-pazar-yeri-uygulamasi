@@ -1,10 +1,11 @@
 import { DataTypes, Model } from "sequelize";
-import { userRole, UserType } from "@/types/user";
+import { UserModelType } from "@/types/models";
+import { userRoleTypeValues } from "@/types/user";
 import { userRoles } from "../enums/userRoles";
 import { db } from "@/config/database";
 import { encryptText, isEncrypted } from "@/utils/text";
 
-export class User extends Model<UserType> {
+export class User extends Model<UserModelType> {
     static hiddenAttributes = ['id', 'password', 'role', 'status', 'updatedAt', 'deletedAt'];
     static guardedAttributes = ['id', 'fullName', 'role', 'status', 'createdAt', 'updatedAt', 'deletedAt'];
 };
@@ -46,7 +47,7 @@ User.init({
     },
     role: {
         type: DataTypes.ENUM,
-        values: userRole,
+        values: userRoleTypeValues,
         defaultValue: userRoles.USER,
         allowNull: false
     },

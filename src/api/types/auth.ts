@@ -1,8 +1,8 @@
-import { DataTypes } from 'sequelize';
 import { JwtPayload } from 'jsonwebtoken';
 import { UserRoleType } from "./user";
+import { ParameterUserIdType } from './parameter';
 
 export type JWTUserType = JwtPayload & {
-    id: string | number | typeof DataTypes.UUID,
+    id: ParameterUserIdType,
     role: UserRoleType
 };
