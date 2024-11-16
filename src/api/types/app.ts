@@ -3,7 +3,7 @@ export type AppConfigType = {
     name: string;
     url: string;
     port: string;
-    loggingFile?: string;
+    loggingFile?: boolean;
 }
 export type DatabaseConfigType = {
     host: string;
@@ -11,4 +11,11 @@ export type DatabaseConfigType = {
     username: string;
     password: string;
     dialect: string;
+}
+export type JwtConfigType = {
+    secretKey?: string;
+    expiresIn?: string;
+}
+export type BcryptConfigType = {
+    saltRounds: number;
 }

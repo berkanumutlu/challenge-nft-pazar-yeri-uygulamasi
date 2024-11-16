@@ -3,6 +3,7 @@ import cors from "cors";
 import { appConfig, databaseConfig } from "@/config";
 import responseHandler from "@/middlewares/responseHandler";
 import errorHandler from "@/middlewares/errorHandler";
+import routes from "@/routes";
 
 // Express sunucuyu başlat
 const server = express();
@@ -16,9 +17,7 @@ server.use(express.json());             // Gelen isteklerin gövdesinde (body) J
 server.use(responseHandler as express.RequestHandler);
 
 // Route tanımları
-server.get("/", (req, res) => {
-    res.send("Hello world!");
-});
+server.use("/api", routes);
 
 // Uygulamayı Başlat
 const main = () => {

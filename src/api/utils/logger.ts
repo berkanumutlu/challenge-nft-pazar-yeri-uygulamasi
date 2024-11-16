@@ -45,7 +45,7 @@ const appendLogFile = (err: Error, req: Request, res: Response): void => {
 // Yeni log kaydı oluşturur
 export const createNewLog = async (err: Error, req: Request, res: Response, next?: Next): Promise<void> => {
     // TODO: Hata takip sistemleri ile entegrasyon yapılabilir. (örnek: sentry.io, rollbar.com)
-    if (appConfig.loggingFile === 'true') {
+    if (appConfig.loggingFile) {
         appendLogFile(err, req, res);
     } else {
         createLogMessage(err, req, res);
