@@ -5,6 +5,9 @@ import responseHandler from "@/middlewares/responseHandler";
 import errorHandler from "@/middlewares/errorHandler";
 import routes from "@/routes";
 
+// Model ilişkileri yükleniyor
+import "./associations";
+
 // Express sunucuyu başlat
 const server = express();
 const host = appConfig.url;
