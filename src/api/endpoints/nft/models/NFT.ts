@@ -1,4 +1,4 @@
-import { DataTypes, Model } from "sequelize";
+import { DataTypes, Model, UpdateOptions } from "sequelize";
 import { NFTModelType } from "@/types/models";
 import { priceCurrencyTypeValues } from "@/types/price";
 import { mediaFileTypeValues } from "@/types/media";
@@ -86,6 +86,25 @@ NFT.init({
         },
         beforeUpdate: (instance) => {
             instance = checkRecordSlug(instance);
+        },
+        beforeBulkCreate: (instances) => {
+            instances.forEach(instance => {
+                instance = checkRecordSlug(instance);
+            });
+        },
+        beforeBulkUpdate: (options: CustomUpdateOptions<NFTModelType>) => {
+            const instances = options?.attributes;
+            if (Array.isArray(instances) && instances.length > 0) {
+                instances.forEach(instance => {
+                    if (instance?.slug) {
+                        instance.slug = checkRecordSlug(instance).get('slug');
+                    }
+                });
+            }
         }
     }
 });
+
+interface CustomUpdateOptions<T> extends UpdateOptions<T> {
+    attributes?: Partial<T>;
+};

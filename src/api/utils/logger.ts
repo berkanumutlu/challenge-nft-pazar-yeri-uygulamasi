@@ -21,7 +21,7 @@ export const createLogMessage = (err: Error, req: Request, res: Response): strin
 };
 // Log dosyası oluşturur
 const createLogFile = (): string => {
-    const __filename = fileURLToPath(import.meta.url); // Çözümlenmiş dosya yolunu al
+    // const __filename = fileURLToPath(import.meta.url); // Çözümlenmiş dosya yolunu al (tsconfig.json'daki module: CommonJS olmadığında bu satır kullanılacak.)
     const __dirname = path.dirname(__filename); // Dizinin adını al
     const logDirectory = path.join(__dirname, '../logs');
     const logFileName = `${date.slice(0, 10)}.log`;

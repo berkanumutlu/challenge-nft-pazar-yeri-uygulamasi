@@ -22,3 +22,7 @@ export const slugifyText = (text: string): string => {
         trim: true         // baş ve sondaki boşlukları kırpar, varsayılan `true`
     });
 };
+export const getRandomEnumValue = <T>(enumObject: T): T[keyof T] => {
+    const values = Object.values(enumObject) as T[keyof T][];
+    return values[Math.floor(Math.random() * values.length)];
+};
