@@ -1,4 +1,4 @@
-import { DataTypes, Model } from "sequelize";
+import { DataTypes, Model, UpdateOptions } from "sequelize";
 import { UserModelType } from "@/types/models";
 import { userRoleTypeValues } from "@/types/user";
 import { userRoles } from "../enums/userRoles";
@@ -74,7 +74,7 @@ User.init({
             }
         },
         beforeUpdate: async (instance) => {
-            if (instance.changed('password') && !await isEncrypted(instance.getDataValue('password'))) {
+            if (instance.changed('password' as keyof User) && !await isEncrypted(instance.getDataValue('password'))) {
                 instance.setDataValue('password', await encryptText(instance.getDataValue('password')));
             }
         },
@@ -86,9 +86,9 @@ User.init({
                 }
             }
         },
-        beforeBulkUpdate: async (options) => {
+        beforeBulkUpdate: async (options: CustomUpdateOptions<UserModelType>) => {
             if (options.fields.includes("password")) {
-                const password = options?.attributes?.password;
+                const password = options.attributes?.password as string;
                 if (password && !await isEncrypted(password)) {
                     options.attributes.password = await encryptText(password);
                 }
@@ -96,3 +96,7 @@ User.init({
         }
     }
 });
+
+interface CustomUpdateOptions<T> extends UpdateOptions<T> {
+    attributes?: Partial<T>;
+};
