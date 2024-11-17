@@ -1,1 +1,1 @@
-# [Challenge] NFT Pazar Yeri Uygulaması
+# [Challenge] NodeJS ile NFT Pazar Yeri Uygulaması

@@ -1,6 +1,8 @@
 <template>
   <NuxtLayout>
-    <NuxtPage />
+    <v-app>
+      <NuxtPage />
+    </v-app>
   </NuxtLayout>
 </template>
 
@@ -16,10 +18,21 @@ useSeoMeta({
   // title: config.public.appName,
   description: 'This is my amazing site, let me tell you all about it.',
   ogDescription: 'This is my amazing site, let me tell you all about it.',
-  ogImage: config.public.appLogo,
+  ogImage: '/logo/og-iamge.jpg',
   twitterCard: 'summary_large_image'
 });
 useHead({
+  link: [
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+      crossorigin: ''
+    }
+  ],
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
   ]

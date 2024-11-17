@@ -1,0 +1,10 @@
+$color-bg-primary: #0F172A;
+// $color-bg-primary: radial-gradient(circle, #030520, #0F172A);
+
+.v-application {
+  background: $color-bg-primary !important;
+
+  &__wrap {
+    min-height: unset !important;
+  }
+}

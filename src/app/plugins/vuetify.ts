@@ -4,14 +4,14 @@ import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
 
 export default defineNuxtPlugin(nuxtApp => {
-    const vuetify = createVuetify({
-        ssr: true,
-        components,
-        directives,
-        theme: {
-            defaultTheme: 'light'
-        }
-    })
+  const vuetify = createVuetify({
+    ssr: true,
+    components,
+    directives,
+    theme: {
+      defaultTheme: 'dark'
+    }
+  });
 
-    nuxtApp.vueApp.use(vuetify)
+  nuxtApp.vueApp.use(vuetify);
 })

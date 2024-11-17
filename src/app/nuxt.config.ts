@@ -18,7 +18,7 @@ export default defineNuxtConfig({
       });
     }
   ],
-  css: ['vuetify/lib/styles/main.sass'],
+  css: ['@/assets/styles/main.scss', 'vuetify/lib/styles/main.sass'],
   postcss: {
     plugins: {
       tailwindcss: {},

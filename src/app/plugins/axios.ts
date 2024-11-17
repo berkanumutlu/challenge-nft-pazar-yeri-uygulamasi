@@ -6,9 +6,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     const axiosInstance = axios.create({
         baseURL: config.public.apiUrl as string,
         headers: {
-            'Content-Type': 'application/json',
-        },
-    })
+            'Content-Type': 'application/json'
+        }
+    });
 
     return {
         provide: {
