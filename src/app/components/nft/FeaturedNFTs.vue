@@ -1,11 +1,11 @@
 <template>
   <div class="w-full">
-    <h2 class="mb-2 px-4 xl:px-0 text-3xl font-semibold text-left">Featured NFTs</h2>
-    <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <NFTItemSkeleton v-if="loading" v-for="index in 4" :key="'skeleton-' + index" class="my-12" />
+    <h2 class="mb-8 text-3xl font-semibold text-left">Featured NFTs</h2>
+    <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <NFTItemSkeleton v-if="loading" v-for="index in 4" :key="'skeleton-' + index" class="mt-6 mb-4 xl:my-12" />
     </div>
-    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <NFTItem v-for="(item, index) in nftItems" :key="index" :item="item" class="my-12" />
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 xl:gap-8">
+      <NFTItem v-for="(item, index) in nftItems" :key="index" :item="item" class="mt-6 mb-4 xl:my-12" />
     </div>
   </div>
 </template>
