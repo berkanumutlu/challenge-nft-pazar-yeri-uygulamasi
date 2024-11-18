@@ -34,7 +34,6 @@ const fetchNFTs = async () => {
           status: true
         },
         limit: 4,
-        skip: 0,
         order: {
           createdAt: "DESC"
         }
@@ -43,7 +42,7 @@ const fetchNFTs = async () => {
     const response = await $axios.post('/nft/list', requestPayload);
 
     if (response?.data?.status === 200) {
-      nftItems.value = response?.data?.data?.items || [];
+      nftItems.value = response?.data?.data?.items ?? [];
     } else {
       console.error("Unexpected response:", response);
     }
