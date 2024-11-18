@@ -10,7 +10,7 @@
             <span class="sr-only">LinkedIn</span>
             <v-icon>mdi-linkedin</v-icon>
           </a>
-          <a href="https://github.com/berkanumutlu/challenge-nodejs-nft-pazar-yeri-uygulamasi" target="_blank" rel="noopener noreferrer" class="text-text-secondary-color hover:text-primary">
+          <a href="https://github.com/berkanumutlu/challenge-nodejs-nft-marketplace-app" target="_blank" rel="noopener noreferrer" class="text-text-secondary-color hover:text-primary">
             <span class="sr-only">GitHub</span>
             <v-icon>mdi-github</v-icon>
           </a>

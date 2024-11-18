@@ -8,9 +8,9 @@
       </div>
       <nav class="hidden md:flex space-x-6">
         <a href="/" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">Home</a>
-        <a href="/about" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">About</a>
+        <a href="#" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">About</a>
         <a href="/nft/list" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">NFTs</a>
-        <a href="/contact" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">Contact</a>
+        <a href="#" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">Contact</a>
       </nav>
       <div class="flex items-center">
         <template v-if="isLoggedIn">

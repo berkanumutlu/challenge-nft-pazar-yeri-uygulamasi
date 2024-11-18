@@ -5,14 +5,22 @@ import { isAdminUser } from "@/utils/auth";
 import { filterHiddenFields, filterGuardedFields } from "@/utils/model";
 import * as NFTService from "../services/NFT";
 import { NFT } from "../models/NFT";
+import { User } from "@/endpoints/auth/models/User";
 
 export async function list(req: Request, res: Response, next: Next) {
     try {
         const { filters } = req.body;
 
         let requestFilter = prepareRequestFilters(filters, req, NFT);
+        if (requestFilter?.include) {
+            requestFilter.include['model'] = User;
+            requestFilter.include['required'] = true;
+        }
         if (!isAdminUser(req)) {
             requestFilter.where = { status: true, ...requestFilter?.where };
+            if (requestFilter?.include) {
+                requestFilter.include['where'] = { status: true, ...requestFilter?.include['where'] };
+            }
         }
 
         const records = await NFTService.list(requestFilter);
@@ -28,9 +36,16 @@ export async function get(req: Request, res: Response, next: Next) {
         const { filters } = req.body;
 
         let requestFilter = prepareRequestFilters(filters, req, NFT);
+        if (requestFilter?.include) {
+            requestFilter.include['model'] = User;
+            requestFilter.include['required'] = true;
+        }
         if (!isAdminUser(req)) {
             if (!filters || !filters?.where || !Object.hasOwn(filters?.where, 'slug')) return res.warning('Please provide slug.', 400);
             requestFilter.where = { status: true, ...requestFilter?.where };
+            if (requestFilter?.include) {
+                requestFilter.include['where'] = { status: true, ...requestFilter?.include['where'] };
+            }
         }
 
         const record = await NFTService.get(requestFilter);
