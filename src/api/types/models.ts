@@ -8,6 +8,7 @@ export type UserModelType = {
     lastName: string;
     email: string;
     password: string;
+    avatar: string | null;
     // role:  keyof typeof userRoles,                      // keyleri alır
     role: (typeof userRoles)[keyof typeof userRoles];   // valuelari alır
     status: boolean;

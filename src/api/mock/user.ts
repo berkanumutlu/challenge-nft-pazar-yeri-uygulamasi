@@ -22,6 +22,7 @@ export const createUsers = async (count: number) => {
                 lastName: faker.person.lastName(),
                 email: faker.internet.email(),
                 password: faker.internet.password(),
+                avatar: faker.image.url(),
                 role: getRandomEnumValue(userRoles),
                 status: faker.datatype.boolean(),
                 createdAt: new Date(),

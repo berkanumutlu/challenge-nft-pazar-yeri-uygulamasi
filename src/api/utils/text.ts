@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import slugify from 'slugify';
 import { bcryptConfig } from '@/config';
 
