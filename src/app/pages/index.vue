@@ -4,7 +4,7 @@
   >
     <div class="w-full h-full absolute top-0 bottom-0 left-0 right-0 object-cover bg-black/90">
       <div class="flex h-full items-center justify-center">
-        <div class="space-y-12 flex flex-col items-center justify-center z-[1]">
+        <div class="w-1/2 space-y-12 flex flex-col items-center justify-center z-[1]">
           <h1 class="text-5xl font-bold tracking-tight text-text-secondary-color dark:text-text-primary-color sm:text-7xl">
             NFT <span class="!text-primary block lg:inline-block">Marketplace</span>
           </h1>

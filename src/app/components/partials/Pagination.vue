@@ -2,7 +2,7 @@
   <v-container class="border-gray-200 bg-gray-800 rounded-lg">
     <v-row justify="space-between" align="center">
       <v-col cols="12" md="6" xl="3">
-        <p class="text-body-2 text-center md:text-left">
+        <p class="text-center lg:!text-left">
           Showing {{ (meta.currentPage - 1) * meta.perPage + 1 }} to {{ Math.min(meta.currentPage * meta.perPage, meta.total) }} of {{ meta.total }} results
         </p>
       </v-col>

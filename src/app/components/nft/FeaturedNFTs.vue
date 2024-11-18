@@ -1,14 +1,11 @@
 <template>
   <div class="w-full">
     <h2 class="mb-2 px-4 xl:px-0 text-3xl font-semibold text-left">Featured NFTs</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 md:gap-y-4 px-4">
-      <NFTItem v-for="(item, index) in nftItems" :key="index" :item="item" class="my-12" />
-    </div>
     <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <div class="w-full bg-gray-200 animate-pulse h-[250px] rounded-lg"></div>
-      <div class="w-full bg-gray-200 animate-pulse h-[250px] rounded-lg"></div>
-      <div class="w-full bg-gray-200 animate-pulse h-[250px] rounded-lg"></div>
-      <div class="w-full bg-gray-200 animate-pulse h-[250px] rounded-lg"></div>
+      <NFTItemSkeleton v-if="loading" v-for="index in 4" :key="'skeleton-' + index" class="my-12" />
+    </div>
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <NFTItem v-for="(item, index) in nftItems" :key="index" :item="item" class="my-12" />
     </div>
   </div>
 </template>
@@ -16,6 +13,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import NFTItem from "@/components/nft/NFTItem.vue";
+import NFTItemSkeleton from "@/skeletons/NFTItemSkeleton.vue";
 
 const { $axios } = useNuxtApp();
 const nftItems = ref([]);

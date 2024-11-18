@@ -3,7 +3,7 @@
     <v-container>
       <h1 class="text-h4 font-weight-bold mb-6 text-center">NFT List</h1>
       <FilterSection @filter-applied="onFilterApplied" :loading="isNFTsLoading" />
-      <NFTList :items="nftItems" class="my-12 nft-list" />
+      <NFTList :items="nftItems" class="my-12 nft-list" :is-loading="isNFTsLoading" />
       <Pagination 
         v-if="!isNFTsLoading && nftItems.length > 0" 
         :meta="meta" 
