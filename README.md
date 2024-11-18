@@ -11,7 +11,7 @@
     <a href="https://github.com/berkanumutlu/challenge-nodejs-nft-marketplace-app/blob/master/LICENSE" target="_blank" rel="nofollow"><img src="https://img.shields.io/github/license/berkanumutlu/laravel-example-app" alt="License"></a>
     <a href="https://nodejs.org" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Node.js-v20.18.0-5FA04E?logo=nodedotjs&logoColor=white&labelColor=5FA04E" alt="Node.js Version"></a>
     <a href="https://nuxt.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Nuxt.js-v3.14.159-00DC82?logo=nuxtdotjs&logoColor=white&labelColor=00DC82" alt="Nuxt.js Version"></a>
-    <a href="https://vuejs.org" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Vue.js-v3.5.13.1-4FC08D?logo=vuedotjs&logoColor=white&labelColor=4FC08D" alt="Vue.js Version"></a>
+    <a href="https://vuejs.org" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Vue.js-v3.5.13-4FC08D?logo=vuedotjs&logoColor=white&labelColor=4FC08D" alt="Vue.js Version"></a>
     <a href="https://tailwindcss.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/@nuxtjs/tailwindcss-v6.12.2-06B6D4?logo=tailwindcss&logoColor=white&labelColor=06B6D4" alt="@nuxtjs/tailwindcss Version"></a>
     <a href="https://vuetifyjs.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Vuetify-v3.7.4-1867C0?logo=vuetify&logoColor=white&labelColor=1867C0" alt="Vuetify Version"></a>
     <a href="https://sequelize.org" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Sequelize-v6.37.5-52B0E7?logo=sequelize&logoColor=white&labelColor=52B0E7" alt="Sequelize Version"></a>
