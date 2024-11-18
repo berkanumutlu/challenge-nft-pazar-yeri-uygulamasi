@@ -1,5 +1,5 @@
 <template>
-  <v-card class="w-full">
+  <v-card>
     <v-text-field
       v-model="searchQuery"
       :loading="loading"
