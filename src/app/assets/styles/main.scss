@@ -8,3 +8,7 @@ $color-bg-primary: #0F172A;
     min-height: unset !important;
   }
 }
+
+.v-pagination__list {
+  justify-content: end !important;
+}

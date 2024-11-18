@@ -2,7 +2,7 @@
   <v-card
     :disabled="loading"
     :loading="loading"
-    class="mx-auto my-12 w-full overflow-visible"
+    class="mx-auto w-full overflow-visible"
     max-width="370"
   >
     <template v-slot:loader="{ isActive }">

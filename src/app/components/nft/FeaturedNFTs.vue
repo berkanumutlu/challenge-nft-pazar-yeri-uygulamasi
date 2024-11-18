@@ -2,7 +2,7 @@
   <div class="w-full">
     <h2 class="mb-2 px-4 xl:px-0 text-3xl font-semibold text-left">Featured NFTs</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 md:gap-y-4 px-4">
-      <NFTItem v-for="(item, index) in nftItems" :key="index" :item="item" />
+      <NFTItem v-for="(item, index) in nftItems" :key="index" :item="item" class="my-12" />
     </div>
     <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <div class="w-full bg-gray-200 animate-pulse h-[250px] rounded-lg"></div>
