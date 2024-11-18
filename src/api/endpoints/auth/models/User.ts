@@ -45,6 +45,11 @@ User.init({
         allowNull: false,
         comment: "Hashed password"
     },
+    avatar: {
+        type: DataTypes.STRING,
+        defaultValue: null,
+        allowNull: true
+    },
     role: {
         type: DataTypes.ENUM,
         values: userRoleTypeValues,
