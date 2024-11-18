@@ -20,7 +20,7 @@
     <a href="https://www.docker.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Docker-v4.25.2-2496ED?logo=docker&logoColor=white&labelColor=2496ED" alt="Docker Version"></a>
 </p>
 
-# [Challenge] NodeJS ile NFT Pazar Yeri Uygulaması
+# [Challenge] NFT Marketplace App with Node.js
 
 It is a challenge project based on Node.js with Typescript, API(Express.js, Sequlize PostgreSQL), APP(Nuxt.js v3, Vuetify, Axios).
 

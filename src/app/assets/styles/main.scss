@@ -10,5 +10,9 @@ $color-bg-primary: #0F172A;
 }
 
 .v-pagination__list {
-  justify-content: end !important;
+  justify-content: center !important;
+
+  @media (min-width: 992px) {
+    justify-content: end !important;
+  }
 }

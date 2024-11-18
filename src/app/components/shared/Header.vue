@@ -1,12 +1,12 @@
 <template>
   <header class="!bg-header-bg-color border-b border-text-secondary-color relative">
     <div class="absolute bottom-0 left-0 w-full h-[2px] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-primary to-primary-hover"></div>
-    <div class="container mx-auto py-4 flex items-center justify-between">
+    <div class="container mx-auto px-4 md:px-0 py-4 flex items-center justify-between flex-col md:flex-row gap-y-4 md:gap-y-0">
       <div class="flex items-center gap-x-1">
         <img :src="appLogo" :alt="`${appName} Logo`" class="w-auto h-8" />
         <span class="font-bold text-xl text-text-secondary-color">{{ appName }}</span>
       </div>
-      <nav class="hidden md:flex space-x-6">
+      <nav class="flex space-x-2 lg:space-x-6">
         <a href="/" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">Home</a>
         <a href="#" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">About</a>
         <a href="/nft/list" class="text-text-secondary-color hover:text-primary px-3 py-2 rounded-md text-sm font-semibold">NFTs</a>

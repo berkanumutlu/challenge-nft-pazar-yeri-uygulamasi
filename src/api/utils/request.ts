@@ -27,6 +27,27 @@ export const prepareRequestFilters = (filters?: RequestFilterType, req?: Request
                 }
             });
 
+            // filters.where.search işlemi
+            if (filters.where?.search && model?.searchableAttributes) {
+                const search = filters.where.search;
+                const searchConditions = model.searchableAttributes.map((attribute: string) => {
+                    const fieldDefinition = model.rawAttributes?.[attribute];
+                    if (fieldDefinition.type.key === "STRING") {
+                        return { [attribute]: { [Op.like]: `%${search}%` } };
+                    } else if (fieldDefinition.type.key === "FLOAT" || fieldDefinition.type.key === "INTEGER") {
+                        return { [attribute]: search };
+                    }
+                    return null;
+                }).filter(Boolean);
+
+                preparedFilters.where = {
+                    ...preparedFilters.where,
+                    [Op.or]: searchConditions
+                };
+
+                delete preparedFilters.where['search'];
+            }
+
             if (filters.where?.include) {
                 preparedFilters.include = preparedFilters.include || {};
                 preparedFilters.include = { where: { ...(!isAdminUser(req) ? filterHiddenFields(filters?.where?.include, req, relatedModel) : filters.where.include) } };
@@ -55,14 +76,14 @@ export const prepareRequestFilters = (filters?: RequestFilterType, req?: Request
 
         if (filters?.selectInclude) {
             preparedFilters.include = preparedFilters.include || {};
-            preparedFilters.include['attributes'] = filters.selectInclude;
+            preparedFilters.include["attributes"] = filters.selectInclude;
             if (!isAdminUser(req)) {
-                preparedFilters.include['attributes'] = filterHiddenFields(filters?.selectInclude, req, relatedModel);
+                preparedFilters.include["attributes"] = filterHiddenFields(filters?.selectInclude, req, relatedModel);
             }
         } else {
             if (!isAdminUser(req) && relatedModel?.hiddenAttributes) {
                 preparedFilters.include = preparedFilters.include || {};
-                preparedFilters.include['attributes'] = {
+                preparedFilters.include["attributes"] = {
                     exclude: relatedModel?.hiddenAttributes
                 };
             }
