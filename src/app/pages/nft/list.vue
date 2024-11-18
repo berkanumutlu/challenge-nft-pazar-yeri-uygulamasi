@@ -20,6 +20,11 @@ import FilterSection from "@/components/partials/FilterSection.vue";
 import NFTList from "@/components/nft/NFTList.vue";
 import Pagination from "@/components/partials/Pagination.vue";
 
+useSeoMeta({
+  title: 'NFT List',
+  description: 'NFT list description'
+});
+
 const { $axios } = useNuxtApp();
 const route = useRoute();
 const router = useRouter();

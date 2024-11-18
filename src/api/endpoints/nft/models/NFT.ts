@@ -10,6 +10,7 @@ import { User } from "@/endpoints/auth/models/User";
 export class NFT extends Model<NFTModelType> {
     static hiddenAttributes = ['id', 'updatedAt', 'deletedAt'];
     static guardedAttributes = ['id', 'slug', 'isFeatured', 'createdBy', 'createdAt', 'updatedAt', 'deletedAt'];
+    static searchableAttributes = ['title', 'slug', 'description', 'price', 'priceCurrency'];
 };
 
 NFT.init({
