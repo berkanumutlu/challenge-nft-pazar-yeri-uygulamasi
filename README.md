@@ -7,8 +7,8 @@
 </div>
 <br>
 <p align="center">
-    <a href="https://github.com/berkanumutlu/challenge-nodejs-nft-marketplace-app/stargazers" rel="nofollow"><img src="https://img.shields.io/github/stars/berkanumutlu/challenge-nodejs-nft-marketplace-app?style=flat&logo=github" alt="Discord Clone Repo stars"></a>
-    <a href="https://github.com/berkanumutlu/challenge-nodejs-nft-marketplace-app/blob/master/LICENSE" target="_blank" rel="nofollow"><img src="https://img.shields.io/github/license/berkanumutlu/laravel-example-app" alt="License"></a>
+    <a href="https://github.com/berkanumutlu/challenge-nodejs-nft-marketplace-app/stargazers" rel="nofollow"><img src="https://img.shields.io/github/stars/berkanumutlu/challenge-nodejs-nft-marketplace-app?style=flat&logo=github" alt="NFT Marketplace App Repo stars"></a>
+    <a href="https://github.com/berkanumutlu/challenge-nodejs-nft-marketplace-app/blob/master/LICENSE" target="_blank" rel="nofollow"><img src="https://img.shields.io/github/license/berkanumutlu/challenge-nodejs-nft-marketplace-app" alt="NFT Marketplace App Repo License"></a>
     <a href="https://nodejs.org" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Node.js-v20.18.0-5FA04E?logo=nodedotjs&logoColor=white&labelColor=5FA04E" alt="Node.js Version"></a>
     <a href="https://nuxt.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Nuxt.js-v3.14.159-00DC82?logo=nuxtdotjs&logoColor=white&labelColor=00DC82" alt="Nuxt.js Version"></a>
     <a href="https://vuejs.org" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/Vue.js-v3.5.13-4FC08D?logo=vuedotjs&logoColor=white&labelColor=4FC08D" alt="Vue.js Version"></a>
